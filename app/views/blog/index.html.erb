@@ -1,0 +1,17 @@
+작업을 업로드하세요
+
+<%= form_tag '/blog/create', method: 'post', multipart: true do %>
+   <%= text_field_tag 'content' %><br>
+    <%= file_field_tag 'image' %><br>
+     <%= submit_tag '등록' %>
+
+<% end %>
+
+<ul>
+<% @posts.each do |p|%>
+    <li>
+    <%= p.content %>
+    <img src= "<%=p.image.url%>">
+    </li>
+<%end%>
+</ul>
